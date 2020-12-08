@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<style type="text/css">
+		h1{
+			margin-left: 130px;
+		}
+		.index{
+			margin-left: 30px;
+		}
+		.col-2{
+			width: 15%;
+			float: left;
+			display: flex;
+		}
+		.col-3{
+			width: 85%;
+			float: right;
+		}
+		.row::after{
+			clear: both;
+			display: table;
+		}
+		.input{
+			margin-left: 90px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hubungi Kami</h1>
+		<div class="index">
+			<p><b>Kantor: </b>di jalan belum jadi</p>
+			<p><b>Nomor Telepon: </b> 08XX XXXX XXXX</p>
+			<p><b>Email: </b> email@contoh.com</p>
+		</div>
+	<h1>Kirimkan Pesan</h1>
+	<form action="index.html">
+		<div class="index">
+			<label for="name"><b>Name</b></label>
+				<span class="input"><input type="text" name="Name"></span><br><br>
+			<label for="email"><b>Email</b></label>
+				<span class="input"><input type="text" name="email"></span><br>
+			<p><b>Jenis Kelamin</b>
+				<span class="input">
+					<input type="radio" value="laki-laki">
+				<label for="laki-laki">Laki-laki</label><br>
+				<input type="radio" value="perempuan" style="margin-left: 197px">
+				<label for="perempuan">Perempuan</label>
+			</span>
+			</p>
+			<label for="pesan"><b>Pesan</b></label>
+				<span class="input"><input type="text" name="pesan" style="height: 60px">
+				</span><br>		
+		</div><br>
+		<input type="submit" value="submit" class="index">
+	</form>
+	
+
+	
+
+
+
+</body>
+</html>
