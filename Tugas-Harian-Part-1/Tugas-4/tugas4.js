@@ -1,7 +1,7 @@
 //soal 1
 var text1 = ""
 console.log('looping pertama')
-for ( var i = 1; i <20; i++ ) {
+for ( var i = 1; i <= 20; i++ ) {
 	if (i % 2 == 0) {
 		text1 += i + " - I Love Coding " + '\n'
 	}
@@ -21,7 +21,7 @@ console.log(text2)
 
 //soal 2
 var a = ""
-for (var i = 1; i < 20; i++) {
+for (var i = 1; i <= 20; i++) {
 	if (i % 2 != 0 && i % 3 == 0) {
 		a += i + ' - I Love Coding ' + '\n'
 	}else if (i % 2 == 0) {
