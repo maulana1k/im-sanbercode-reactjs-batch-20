@@ -33,15 +33,14 @@ for (var i = 1; i < 20; i++) {
  console.log(a)
 					
 //soal 3
-var text2 = ''
-var c = 7
-for (a = 1; a < c; a++) {
-	for (b = 1; b < a; b++) {
-		text2 += ' # ' 
+var hash = ''
+for (a = 0; a < 8; a++) {
+	for (b = 0; b < a; b++) {
+		hash += ' # ' 
 	}
-	text2 += '\n' + '\n'
+	hash += '\n' + '\n'
 }         
-console.log(text2)
+console.log(hash)
 
 //soal 4
 var kalimat = 'saya sangat senang belajar javascript'
