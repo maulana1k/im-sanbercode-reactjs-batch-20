@@ -14,11 +14,11 @@ var num1 = 12
 var num2 = 4
 var hasilKali = kalikan(num1, num2)
 console.log(hasilKali)
-
+import
 //soal 3
 console.log('jawaban 3')
 function introduce(a,b,c,d) {
-	return 'Nama saya ' + a + ', umur saya '+b+'tahun,' 
+	return 'Nama saya ' + a + ', umur saya '+b+'tahun,'
 			+ 'alamat saya di ' + c + ', dan saya punya hobi ' + d + '!'
 }
 var nama = "Jhon"
@@ -85,5 +85,5 @@ var film = [uploadFilm('Avengers:Endgame', '3 jam 2 menit', 'Laga/Fiksi', 2019 )
 		   	uploadFilm('Star Wars:Rise of The SkyWalker', '2 jam 22 menit', 'Ilmiah/Fiksi', 2019 ),
 		   	uploadFilm('Avatar', '2 jam 42 menit', 'Ilmiah/Fiksi', 2009 ),
 		   	uploadFilm('Despicable Me 3', '1 jam 36 menit', 'Komedi/Fiksi', 2017 )]
-			
+
 console.log(dataFilm)
