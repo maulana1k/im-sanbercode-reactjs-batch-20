@@ -1,4 +1,5 @@
 //soal 1
+console.log('soal 1')
 const phi = 22/7
 {
 	let circleArea = (r) => {
@@ -12,6 +13,7 @@ const phi = 22/7
 }
 
 //soal 2
+console.log('soal 2')
 let kalimat = ''
 let tambahKata = (kata) => {
 	   return kalimat += `${kata} `
@@ -23,6 +25,7 @@ tambahKata('frontend')
 tambahKata('developer')
 console.log(kalimat)
 //soal 3
+console.log('soal 3')
 let name = ''
 const nameFunction = (firstName, lastName) => {
   return { firstName,lastName,
@@ -36,6 +39,7 @@ nameFunction("Smithy", "Jagger").fullName()
 console.log(name)
 
 //soal 4
+console.log('soal 4')
 const newObject = {
   firstName: "Harry",
   lastName: "Potter Holt",
@@ -45,8 +49,10 @@ const newObject = {
 }
 const {firstName, lastName, destination, occupation} = newObject
 console.log(firstName, lastName, destination, occupation)
+console.log(newObject)
 
 //soal 5
+console.log('soal 5')
 const west = ["Will", "Chris", "Sam", "Holly"]
 const east = ["Gill", "Brian", "Noel", "Maggie"]
 const combined = [...west, ...east]
