@@ -14,16 +14,14 @@ const phi = 22/7
 //soal 2
 let kalimat = ''
 let tambahKata = (kata) => {
-	return kalimat += `${kata} `
+	   return kalimat += `${kata} `
 }
 tambahKata('saya')
 tambahKata('adalah')
 tambahKata('seorang')
 tambahKata('frontend')
 tambahKata('developer')
-
 console.log(kalimat)
-
 //soal 3
 let name = ''
 const nameFunction = (firstName, lastName) => {
@@ -33,7 +31,6 @@ const nameFunction = (firstName, lastName) => {
     }
   }
 }
- 
 //Driver Code 
 nameFunction("Smithy", "Jagger").fullName()
 console.log(name)
@@ -46,7 +43,7 @@ const newObject = {
   occupation: "Deve-wizard Avocado",
   spell: "Vimulus Renderus!!!"
 }
-const {firstName, lastName, destination, occupation, spell} = newObject
+const {firstName, lastName, destination, occupation} = newObject
 console.log(firstName, lastName, destination, occupation)
 
 //soal 5
