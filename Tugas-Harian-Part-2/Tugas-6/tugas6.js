@@ -2,10 +2,10 @@
 const phi = 22/7
 {
 	let circleArea = (r) => {
-		return phi * (r ** 2) 
+		return 'luas: ' + phi * r ** 2 
 	}
 	let circumfence = (r) => {
-		return 2 * phi * r
+		return 'keliling: ' + 2 * phi * r
 	}
 	console.log(circleArea(7))
 	console.log(circumfence(14))
@@ -55,3 +55,4 @@ const east = ["Gill", "Brian", "Noel", "Maggie"]
 const combined = [...west, ...east]
 //Driver Code
 console.log(combined)
+
