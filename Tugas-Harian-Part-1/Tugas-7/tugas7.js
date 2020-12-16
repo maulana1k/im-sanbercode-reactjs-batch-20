@@ -63,7 +63,7 @@ class Clock {
     this.template = template
     this.interval = interval;
   }
-   render=()=>  {
+   render = () =>  {
     let date = new Date();
 
     let hours = date.getHours();
