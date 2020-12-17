@@ -1,0 +1,97 @@
+.app{
+  margin-top: 50px; 
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+
+}
+.card{
+  width: 60%;
+  display:block;
+ /* justify-content: center;*/
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 0 lightgrey;
+}
+h1{
+  margin: 40px 0 40px 0;
+  text-align: center;
+}
+.form{
+  display:block;
+  font-size: 20px;
+  margin: 20px 10% 20px 5%;
+}
+/*p{
+  clear: both;
+  display: flex;
+  
+}*/
+#nama{
+  margin-right: 15%;
+  float: right;
+  width: 50%;
+  height: 15px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 6px;
+}
+
+#daftarItem{
+  float: left;
+  vertical-align: middle;
+  margin: 6px 6px 4px 35%;
+}
+#item{
+  margin-bottom: -20px;
+}
+label{
+  font-size: 16px;
+}
+button{
+  border-radius: 20px;
+  font-size: 16px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/
