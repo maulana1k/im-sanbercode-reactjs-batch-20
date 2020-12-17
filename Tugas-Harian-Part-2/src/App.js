@@ -9,20 +9,26 @@ function App() {
           <div className="form">
             <form action="#">
               <p>Nama Pelanggan 
-                <input type="text" name="nama" id="nama" />
+                <input type="text" name="nama" id="nama" placeholder="  Input your name ..." />
               </p>              
               <p id="item">Daftar Item</p>
-              <input type="checkbox" name="daftarItem" id="daftarItem" value="Semangka"/>
+              <input type="checkbox" name="daftarItem" />
               <label htmlFor="daftarItem">Semangka</label><br/>
-              <input type="checkbox" name="daftarItem" id="daftarItem" value="Semangka"/>
+              <input type="checkbox" name="daftarItem" />
               <label htmlFor="daftarItem">Jeruk</label><br/>
-              <input type="checkbox" name="daftarItem" id="daftarItem" value="Semangka"/>
+              <input type="checkbox" name="daftarItem" />
               <label htmlFor="daftarItem">Nanas</label><br/>
-              <input type="checkbox" name="daftarItem" id="daftarItem" value="Semangka"/>
+              <input type="checkbox" name="daftarItem" />
               <label htmlFor="daftarItem">Salak</label><br/>
-              <input type="checkbox" name="daftarItem" id="daftarItem" value="Semangka"/>
-              <label htmlFor="daftarItem">Anggur</label><br/>
-              <button type="submit">submit</button>
+              <input type="checkbox" name="daftarItem" />
+              <label htmlFor="daftarItem">Apel</label><br/>
+              <input type="checkbox" name="daftarItem" />
+              <label htmlFor="daftarItem">Melon</label><br/>
+              <input type="checkbox" name="daftarItem" />
+              <label htmlFor="daftarItem">Pepaya</label><br/>
+              <input type="checkbox" name="daftarItem" />
+              <label htmlFor="daftarItem">Markisa</label><br/>
+              <input type="submit" className="submit" value="Submit"/>
             </form>
           </div>
         
