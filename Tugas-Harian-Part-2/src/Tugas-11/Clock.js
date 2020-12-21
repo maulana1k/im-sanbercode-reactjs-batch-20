@@ -14,8 +14,6 @@ class Clock extends Component {
 			if(this.props.start !== undefined){
 				this.setState({time : this.props.start})
 			}
-			if(this.state.start !== false){
-			}
 			this.timerID = setInterval(
 				() => this.tick(), 1000)				
 		}
@@ -46,7 +44,7 @@ class Clock extends Component {
 				return null
 			}
 			return(
-				<div className="app">
+				<>
 					<div className="card-green">
 						<h3>Sekarang jam {this.state.date.toLocaleTimeString()} </h3>
 					</div>
@@ -55,7 +53,7 @@ class Clock extends Component {
 						</h3>
 						<div className="button" onClick={this.timerHandler}> <h4> {this.state.button}</h4> </div>
 					</div>
-				</div>
+				</>
 				)
 		}
 	

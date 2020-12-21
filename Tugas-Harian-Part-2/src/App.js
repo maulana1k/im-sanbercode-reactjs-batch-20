@@ -7,11 +7,15 @@ import './App.css';
 
 function App() {
   return (
+  	<>
     <div className="app">
       <Form />
       <Table/>
-      
     </div>
+    <div className="app">
+    	<Clock/>
+    </div>
+    </>
   );
 }
 
