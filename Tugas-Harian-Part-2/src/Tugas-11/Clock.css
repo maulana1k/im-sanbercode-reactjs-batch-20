@@ -1,0 +1,49 @@
+.card-green{
+	display:flex;
+	color: white;
+  margin: 10px;
+ /* justify-content: center;*/
+  border-radius: 3px;
+  box-shadow:1px 1px  5px 0 gray;
+  background-color: #28a745;
+  font-size: 24px;
+}
+.card-red{
+	display:flex;
+	color: white;
+  margin: 10px;
+ /* justify-content: center;*/
+  border-radius: 3px;
+  box-shadow:1px 1px 5px 0 gray;
+  background-color: #dc3545;
+	font-size: 24px;
+	align-items: center;
+}
+h3{
+	margin: 10px 20px 10px 20px;
+}
+.button{
+	color: white;
+	width: 60px; height: 52px;
+	display: flex;
+	border-style: none;
+	font-size: 18px;
+	background-color: #dc3545;
+	justify-content: center; align-items: center;
+	transition:width 0.1s, height 0.1s,background-color 0.2s;
+}
+.button:hover{
+	background-color: white;
+	color: #dc3545
+}
+.button:active{
+	width: 50px;
+}
+
+/*#timer{
+	background-color: white;
+	color: #dc3545;
+	padding: 5px 5px 5px 5px;
+	margin: 5px 5px 5px 5px;
+	border-radius: 3px;
+}*/
