@@ -1,11 +1,20 @@
 import React, {Component} from 'react'
 import './Form.css'
+let dataHargaBuah = [
+  {nama: "Semangka", harga: 10000, berat: 1000},
+  {nama: "Anggur", harga: 40000, berat: 500},
+  {nama: "Strawberry", harga: 30000, berat: 400},
+  {nama: "Jeruk", harga: 30000, berat: 1000},
+  {nama: "Mangga", harga: 30000, berat: 500},
+  {nama: "Pepaya", harga: 20000, berat: 500},
+  {nama: "Melon", harga: 25000, berat: 1000},
+]
 
 class Form extends Component{
   render(){
     
 	return (
-		<div id="card-blue">
+		<div className="card-blue">
         	<h2>Form Pembelian Buah</h2>
 
           <div className="form">
@@ -14,22 +23,15 @@ class Form extends Component{
                 <input type="text" name="nama" id="nama" placeholder="  Input your name ..." />
               </p>              
               <p id="item">Daftar Item</p>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Semangka</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Jeruk</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Nanas</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Salak</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Apel</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Melon</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Pepaya</label><br/>
-              <input type="checkbox" name="daftarItem" />
-              <label htmlFor="daftarItem">Markisa</label><br/>
+              {dataHargaBuah.map((item, index) =>
+
+                <span key={index}>
+                  <input type="checkbox" name="daftarItem" />
+                  <label htmlFor="daftarItem" >{item.nama}</label><br/>
+                </span>
+                  
+              )}
+          
               <input type="submit" className="submit" value="Submit"/>
             </form>
           </div>

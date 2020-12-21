@@ -1,6 +1,7 @@
 import React from 'react'
-import Form from './Tugas-9/Form.js'
-import Table from './Tugas-10/Table.js'
+import Form from './Tugas-9/Form'
+import Table from './Tugas-10/Table'
+import Clock from './Tugas-11/Clock'
 import './App.css';
 
 
@@ -9,6 +10,7 @@ function App() {
     <div className="app">
       <Form />
       <Table/>
+      
     </div>
   );
 }

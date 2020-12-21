@@ -16,7 +16,7 @@ class Table extends Component {
 	render(){
 
 	return (
-		<div id="table-green">
+		<div className="card-orange">
         <h2>Tabel Harga Buah</h2>
         <div >
           
@@ -27,17 +27,17 @@ class Table extends Component {
               <th>Berat</th>
             </tr>
          
-            {dataHargaBuah.map(el=>{
-            	return(
-				<tr>
-	              <td>{el.nama}</td>
-	              <td>Rp.{el.harga}</td>
-	              <td>{el.berat} gr</td>
-	            </tr>
+            {dataHargaBuah.map((item, index)=>
+            
+  				    <tr key={index}>
+  	            <td>{item.nama}</td>
+  	            <td>Rp.{item.harga}</td>
+  	            <td>{item.berat} gr</td>
+  	          </tr>
            				
-            	)
-            })}
-          	</table>
+           	
+           )}
+      </table>
 
         </div>
       </div>

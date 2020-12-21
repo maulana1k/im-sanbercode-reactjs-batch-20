@@ -2,12 +2,10 @@ body{
   background-color: #e9ecef; 
 }
 .app{
-  margin-top: 50px; 
-  padding: 5px;
+  padding: 20px;
   display: flex;
-  clear: both;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /*button{
