@@ -21,12 +21,16 @@ class Table extends Component {
         <div >
           
 			<table>
+        <thead>
+          
             <tr>
               <th>Nama Buah</th>
               <th>Harga</th>
               <th>Berat</th>
             </tr>
-         
+        </thead>
+        <tbody>
+          
             {dataHargaBuah.map((item, index)=>
             
   				    <tr key={index}>
@@ -37,6 +41,7 @@ class Table extends Component {
            				
            	
            )}
+        </tbody> 
       </table>
 
         </div>

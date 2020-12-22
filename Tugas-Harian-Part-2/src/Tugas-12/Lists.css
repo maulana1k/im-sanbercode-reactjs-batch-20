@@ -1,0 +1,27 @@
+td,table{
+	padding: 15px;
+	border: 2px solid #17a2b8;
+	margin: 0 10px 10px;
+	border-collapse: collapse;
+	background-color: white;
+	border-radius: 10px
+}
+th{
+	padding: 20px;
+	border: 
+}
+.btn{
+	color:white;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px 0 lightgrey;
+}
+.edit{
+	background-color: #28a745;
+	
+}
+.delete{
+	background-color: #dc3545;
+	
+	margin-left: 5px
+}
