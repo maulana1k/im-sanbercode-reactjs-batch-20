@@ -44,17 +44,15 @@ class Lists extends Component {
 	}
 	handleEdit=(e)=>{
 		let i = e.target.value
-		let namaBuah  = this.state.dataHargaBuah[i].nama
-		let harga = this.state.dataHargaBuah[i].harga
-		let berat = this.state.dataHargaBuah[i].berat
-		this.setState({			nama:namaBuah, harga:harga, berat:berat, currentIndex:i		})
+		let namaBuah  = this.state.dataHargaBuah[i]
+		this.setState({			nama:namaBuah.nama, harga:namaBuah.harga, berat:namaBuah.berat, currentIndex:i		})
 	}
 	handleDelete=(e)=>{
 		let i = parseInt(e.target.value)
 		let dataHargaBuahNew = this.state.dataHargaBuah.filter((val, index)=>{
 			return index !== i
 		})
-			console.log(i)
+			console.log(dataHargaBuahNew)
 		this.setState({			dataHargaBuah:[...dataHargaBuahNew]		})
 	}
 	render(){
@@ -103,10 +101,10 @@ class Lists extends Component {
               <input type="number" name="harga" style={{width: "100px"}} 
 	              onChange={this.handleChange} 
 	              value={this.state.harga}/><br/>
-              <label htmlFor="berat">Berat</label><br/>
+              <label htmlFor="berat">Berat (gram)</label><br/>
               <input type="number" name="berat" style={{width: "100px"}} 
 	              onChange={this.handleChange} 
-	              value={this.state.berat}/><br/>
+	              value={this.state.berat}/> <br/>
               <input type="submit" className="submit" value="Submit"/>
             </form>
           </div>
