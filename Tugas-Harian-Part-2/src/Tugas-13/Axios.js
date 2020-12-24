@@ -124,7 +124,7 @@ function ListsAxios() {
 	            {buah.map((item, index)=>
 	            
 	  					<tr key={index+1}>
-	  						<td>{item.id}  </td>
+	  						<td>{index+1}  </td>
 			  	            <td>{item.name}</td>
 			  	            <td>Rp.{item.price.toLocaleString()}</td>
 			  	            <td>{item.weight}</td>
