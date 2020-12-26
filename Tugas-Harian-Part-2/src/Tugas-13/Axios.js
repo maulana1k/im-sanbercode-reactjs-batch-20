@@ -60,7 +60,6 @@ function ListsAxios() {
 			setRefresh(true)
 		})
 	}
-<<<<<<< HEAD
 	return(
 		<div className="app">
 			<div className="card-blue">
@@ -107,38 +106,6 @@ function ListsAxios() {
 			        	</tbody>
 	          		</> )
 			    }
-=======
-	return( <div>
-		{buah !== null && 
-			(<div className="app">
-		<div className="card-blue">
-	       <h2>Tabel Harga Buah</h2>
-	        <div>	          
-				<table>
-	        <thead>     
-	            <tr>
-	            	<th>No.</th>
-	              <th>Nama Buah</th>
-	              <th>Harga</th>
-	              <th>Berat (gr)</th>
-	              <th>Edit/Delete </th>
-	            </tr>
-	        </thead>
-	        <tbody>
-	          
-	            {buah.map((item, index)=>
-	            
-	  					<tr key={index+1}>
-	  						<td>{index+1}  </td>
-			  	            <td>{item.name}</td>
-			  	            <td>Rp.{item.price.toLocaleString()}</td>
-			  	            <td>{item.weight}</td>
-			  	            <td><button className="btn edit" onClick={handleEdit} value={item.id}>edit</button>
-			  	            	<button className="btn delete" onClick={handleDelete} value={item.id}>delete</button></td>
-			  	        </tr>	           					           	
-			           )}
-			        </tbody> 
->>>>>>> origin/main
 			      </table>
 		        </div>
 		    </div>
@@ -168,11 +135,6 @@ function ListsAxios() {
 		</div>
 
 		)
-<<<<<<< HEAD
 	}
 
-=======
-	}	
-		
->>>>>>> origin/main
 export default ListsAxios
