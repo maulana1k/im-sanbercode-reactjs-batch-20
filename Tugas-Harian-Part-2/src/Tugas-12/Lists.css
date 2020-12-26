@@ -6,15 +6,20 @@ td,table{
 	background-color: white;
 	border-radius: 10px
 }
+td{
+	max-width: 300px;
+	word-wrap: break-word;
+}
 th{
 	padding: 20px;
-	border: 
+	 
 }
 .btn{
 	color:white;
-	padding: 7px;
+	border-style: none;
+	padding: 10px;
 	border-radius: 5px;
-	box-shadow: 2px 2px 5px 0 lightgrey;
+	/*box-shadow: 2px 2px 5px 0 lightgrey;*/
 }
 .edit{
 	background-color: #28a745;
@@ -24,4 +29,7 @@ th{
 	background-color: #dc3545;
 	
 	margin-left: 5px
+}
+.item-weight{
+	text-align: right;
 }

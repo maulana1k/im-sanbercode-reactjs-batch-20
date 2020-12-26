@@ -1,9 +1,10 @@
 body{
-  background-color: #e9ecef; 
+/*  background-color: #e9ecef; */
 }
 .app{
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
 }

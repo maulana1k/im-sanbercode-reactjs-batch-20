@@ -16,8 +16,7 @@ class Clock extends Component {
 			}
 			this.timerID = setInterval(
 				() => this.tick(), 1000)				
-		}
-		
+		}	
 		tick(){
 			if(this.state.start === true){
 				this.setState({
