@@ -1,10 +1,11 @@
 import React from 'react'
 import Form from './Tugas-9/Form'
-import Test from './Exercise/Effect'
+// import Test from './Exercise/Effect'
 // import Table from './Tugas-10/Table'
 // import Clock from './Tugas-11/Clock'
 // import Lists from './Tugas-12/Lists'
-import ListsAxios from './Tugas-13/Axios'
+// import ListsAxios from './Tugas-13/Axios'
+import Fruits from './Tugas-14/Fruits'
 import './App.css';
 
 
@@ -16,7 +17,8 @@ function App() {
       {/*<Form />*/}
       {/*<Table/>*/} 
       {/*<Lists/>*/}
-      <ListsAxios/>
+      {/*<ListsAxios/>*/}
+      <Fruits/>
     </div>
      <div className="app">
     	{/*<Clock/>*/}

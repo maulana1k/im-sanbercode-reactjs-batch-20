@@ -3,17 +3,16 @@ import '../Tugas-12/Lists.css'
 import axios from 'axios'
 
 function ListsAxios() {
-	const [fruits, setFruits] = useState(null)
-	const [name , setName] = useState('')
-	const [price, setPrice] = useState('')
-	const [weight, setWeight] = useState('')
-	const [currentId, setCurrentId] = useState(null)
+	const [fruits, setFruits] = useState([])
+	const [fruitInput, setFruitInput] = useState({name:'',weight:'',price:'',id:null})
 	const [refresh , setRefresh] = useState(false)
+	const [loading, setLoading] = useState('')
 	const resetInput = () => {
-		 setName('');setWeight('');setPrice('');
-		setCurrentId(null);setRefresh(true)
+		 setFruitInput({name:'',weight:'',price:'',id:''})
+		 setRefresh(true)
 	}
 	const url = 'http://backendexample.sanbercloud.com/api/fruits'
+	// console.log(fruits)
 	const getFruits = async () => {
 		try {
 			let response = await axios.get(url)
@@ -22,36 +21,59 @@ function ListsAxios() {
 			console.log(e.message)
 		}
 		setRefresh(false)
-	}
+	} 
 	useEffect(()=>{
 		getFruits();
 	}, [ refresh ])
+	useEffect(() => {
+		const interval= setInterval(() =>{
+			setLoading('=' + loading)
+			if(loading === '=====================')
+				setLoading('')
+		}, 20)
+		return () => clearInterval(interval)
+	}, [loading])
 	const handleSubmit=(e)=>{
 		e.preventDefault()
-		let fruitInput = { name:name, price:price,weight:weight }
-		if(currentId === null){ //jika tambah
+		if(fruitInput.id === null){ //jika tambah
 			axios.post(url,  fruitInput )
 			.then(()=>{	resetInput() })
 		}else{ //jika edit
-			axios.put(`${url}/${currentId}`,fruitInput)
+			axios.put(`${url}/${fruitInput.id}`,fruitInput)
 			.then(()=>{ resetInput() }) 
 		}
 	}
 	const handleChange=(e)=>{ //handle saat isi form
 		let name = e.target.name
 		let value = e.target.value
-		if(name === 'name'){setName(value)}
-		if(name === 'price'){setPrice(value)}
-		if(name === 'weight'){setWeight(value)}
+		switch(name){
+			case 'name': {
+				setFruitInput({...fruitInput,name:value});
+				break
+			}
+			case 'price':{
+				setFruitInput({...fruitInput,price:value});
+				break
+			} 
+			case 'weight': {
+				setFruitInput({...fruitInput,weight:value});
+				break
+			}
+			default:{break;}
+		}
+		
 	}
 	const handleEdit=(e)=>{ //menampilkan data yg akan diedit di form
 		let id = parseInt(e.target.value)
 		axios.get(`${url}/${id}`).then(res => {
 			let data = res.data
-			setName(data.name)
-			setPrice(data.price)
-			setWeight(data.weight)
-			setCurrentId(data.id)
+			setFruitInput({
+				name:data.name,
+				price:data.price,
+				weight:data.weight,
+				id:data.id
+			})
+	
 		})
 	}
 	const handleDelete=(e)=>{//delete data
@@ -66,7 +88,7 @@ function ListsAxios() {
 			      <h2>Tabel Harga Buah</h2>
 			        <div>
 						<table>
-			    { fruits===null ? ( <> 
+			    { fruits.length === 0  ? ( <> 
 			        <thead>
 			            <tr>
 			            	<th>No.</th>
@@ -78,8 +100,8 @@ function ListsAxios() {
 			        </thead>
 				    <tbody>
 				        <tr>
-				        	<td style={{textAlign: "center", padding: "10% 0 10% 0"}} colSpan="5">
-				        	Loading ...</td>
+				        	<td style={{ padding: "5% 0 5% 0"}} colSpan="5">
+				        	<span style={{marginLeft:"30%"}}>[ {loading}</span><span style={{float:"right",marginRight:"30%"}}>]</span></td>
 				        </tr>
 				    </tbody>
 			        </>) : ( <>
@@ -117,15 +139,15 @@ function ListsAxios() {
 		              <label htmlFor="name">Nama Buah</label><br/>
 		              <input required type="text" name="name"
 			              onChange={handleChange}
-			              value={name}/><br/>
+			              value={fruitInput.name}/><br/>
 		              <label htmlFor="harga">Harga</label><br/>
 		              <input type="number" name="price" style={{width: "100px"}}
 			              onChange={handleChange}
-			              value={price}/><br/>
+			              value={fruitInput.price}/><br/>
 		              <label htmlFor="berat">Berat (gram)</label><br/>
 		              <input type="number" name="weight" style={{width: "100px"}}
 			              onChange={handleChange}
-			              value={weight}/> <br/>
+			              value={fruitInput.weight}/> <br/>
 		              <input type="submit" className="submit" value="Submit"/>
 
 		            </form>

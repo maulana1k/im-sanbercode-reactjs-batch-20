@@ -2,6 +2,7 @@
   display:flex;
   flex-direction: column;
   margin: 10px;
+  
   border-radius: 10px;
   box-shadow:1px 1px 10px 0 lightgrey;
   background-color: #17a2b8;
@@ -12,23 +13,24 @@ h2{
   color: white;
 }
 .form{
-  display:block;
+  display:flex;
   font-size: 20px;
   margin:0 0 0 0;
   padding: 4% 6% 6% 6%;
   background-color: white;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px
-}/
+}
 #nama{
-  float: right;
+  /*margin-left: 20px;*/
+  float:right;
   width: 50%;
   height: 15px;
   border: 1px solid grey;
   border-radius: 3px;
   padding: 4px 0 4px 0;
 }
-p{  font-size: 18px}
+p{  font-size: 18px;}
 input[type="checkbox"]{
   float: left;
   vertical-align: middle;
@@ -51,7 +53,7 @@ label{
   color: white;
   outline: none;
   padding: 10px;
-  float: right;
+  float: left;
 }
 .submit:focus{
   background-color: #023abd;
