@@ -8,10 +8,11 @@ export const FruitsProvider = props => {
 	const [input , setInput]  = useState({
 		name:'',price:'',weight:''
 	})
+	
 
 return (
 	<FruitsContext.Provider value={
-		[fruits, setFruits,currentId, setCurrentId,input , setInput] }>
+		[fruits, setFruits,currentId, setCurrentId,input ,setInput] }>
 		{props.children}
 	</FruitsContext.Provider>
 	)

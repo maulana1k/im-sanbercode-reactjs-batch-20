@@ -16,7 +16,7 @@ class Table extends Component {
 	render(){
 
 	return (
-		<div className="card-orange">
+		<div className="card-blue">
         <h2>Tabel Harga Buah</h2>
         <div >
           
@@ -26,7 +26,7 @@ class Table extends Component {
             <tr>
               <th>Nama Buah</th>
               <th>Harga</th>
-              <th>Berat</th>
+              <th>Berat (gr)</th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@ class Table extends Component {
   				    <tr key={index}>
   	            <td>{item.nama}</td>
   	            <td>Rp.{item.harga}</td>
-  	            <td>{item.berat} gr</td>
+  	            <td>{item.berat}</td>
   	          </tr>
            				
            	

@@ -26,6 +26,7 @@ const FruitsTable = () => {
 				price:data.price,
 				weight:data.weight
 			})
+		
 		setCurrentID(id)
 		setRefresh(true)
 	}

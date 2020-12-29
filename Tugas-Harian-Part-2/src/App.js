@@ -1,29 +1,22 @@
 import React from 'react'
-import Form from './Tugas-9/Form'
-// import Test from './Exercise/Effect'
-// import Table from './Tugas-10/Table'
-// import Clock from './Tugas-11/Clock'
-// import Lists from './Tugas-12/Lists'
-// import ListsAxios from './Tugas-13/Axios'
-import Fruits from './Tugas-14/Fruits'
+
+import {BrowserRouter as Router} from 'react-router-dom'
+import {ThemeProvider} from './Tugas-15/ThemeContext'
+import Navbar from './Tugas-15/Navbar'
+import Routes from './Tugas-15/Routes'
 import './App.css';
 
 
 function App() {
   return (
-  	<div>
-    {/*<Test/>*/}
-    <div className="app">
-      {/*<Form />*/}
-      {/*<Table/>*/} 
-      {/*<Lists/>*/}
-      {/*<ListsAxios/>*/}
-      <Fruits/>
-    </div>
-     <div className="app">
-    	{/*<Clock/>*/}
-    </div>
-    </div>
+    <Router>
+        <ThemeProvider>
+        <Navbar/>
+        </ThemeProvider>
+      <div className="app">
+        <Routes/>
+      </div>
+    </Router>
   );
 }
 

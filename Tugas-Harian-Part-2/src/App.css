@@ -1,5 +1,5 @@
 body{
-/*  background-color: #e9ecef; */
+  background-color: #e9ecef; 
 }
 .app{
   padding: 20px;
@@ -8,6 +8,7 @@ body{
   justify-content: center;
   align-items: flex-start;
 }
+
 
 /*button{
   border-radius: 20px;
