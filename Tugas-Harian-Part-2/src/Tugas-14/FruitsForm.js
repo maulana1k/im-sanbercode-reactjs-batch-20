@@ -13,7 +13,7 @@ const FruitsForm = () => {
 		 setCurrentID(null)
 	}
 	// console.log(fruits)
-	console.log(input)	
+	// console.log(input)	
 	useEffect(() => {
 		// if(refresh === true){
 			axios.get(url).then(res => {

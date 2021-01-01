@@ -4,7 +4,7 @@
   margin: 10px;
  /* justify-content: center;*/
   border-radius: 3px;
-  box-shadow:1px 1px  5px 0 gray;
+/*  box-shadow:1px 1px  5px 0 gray;*/
   background-color: #28a745;
   font-size: 24px;
 }
@@ -14,7 +14,7 @@
   margin: 10px;
  /* justify-content: center;*/
   border-radius: 3px;
-  box-shadow:1px 1px 5px 0 gray;
+ /* box-shadow:1px 1px 5px 0 gray;*/
   background-color: #dc3545;
 	font-size: 24px;
 	align-items: center;

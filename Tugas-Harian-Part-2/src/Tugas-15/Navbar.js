@@ -5,11 +5,14 @@ import  "./Toggler.css";
 
 export const ThemeToggler = () => {
 	const [theme, setTheme,mode, setMode] = useContext(ThemeContext)
-	console.log(theme)
+	// console.log(theme)
 	const toggleTheme = () => {
+		// let a = document.getElementById('root')
 		if(theme === '-dark' && mode === 'On'){
 			setTheme('-light');setMode('Off')
-		}else{ setTheme('-dark');setMode('On')}
+		}else{ 
+			setTheme('-dark');setMode('On')
+		}
 	}
 	return(
 		<ThemeProvider>
@@ -19,7 +22,7 @@ export const ThemeToggler = () => {
 		</ThemeProvider>
 		)
 }
-function Navbar() {
+export const Navbar = () => {
 	const [theme] = useContext(ThemeContext)
 	console.log(theme)
 	return (
@@ -36,12 +39,10 @@ function Navbar() {
 			<div className="theme">
 				<b>Dark Mode</b>
 			</div>
-			<div style={{display: 'flex', justifyContent:'center',width:'50px'}}>
+			<div style={{display: 'flex', justifyContent:'center',width:'50px',height:'30px',alignItems:'center'}}>
 				<ThemeToggler/>
 			</div>
 		</div>
 		
 		)
 }
-
-export default Navbar

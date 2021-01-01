@@ -5,10 +5,10 @@ import {FruitsContext} from "./FruitsContext";
 const FruitsTable = () => {
 	const [fruits, setFruits, currentID, setCurrentID,input , setInput] = useContext(FruitsContext)
 	// console.log(input)
-	console.log(fruits)
+	// console.log(fruits)
 	const url = 'http://backendexample.sanbercloud.com/api/fruits'
 	const [refresh , setRefresh] = useState(false)
-	console.log(refresh)
+	// console.log(refresh)
 	useEffect(() => {	
 			axios.get(url).then(res => {
 				let data = res.data
@@ -17,6 +17,7 @@ const FruitsTable = () => {
 					return {id:el.id,name:el.name,price:parseInt(el.price),weight:el.weight}
 				}))
 			})		
+			
 	}, [refresh])
 	const handleEdit=(e)=>{ //menampilkan data yg akan diedit di form
 		let id = parseInt(e.target.value)
@@ -40,6 +41,7 @@ const FruitsTable = () => {
 		<div className="card-blue">
 			<h2>Tabel Harga Buah</h2>
 			    <div>
+			 
 				<table>
 			    { fruits.length === 0  ? ( <> 
 			        <thead>
@@ -69,6 +71,7 @@ const FruitsTable = () => {
 			        	</thead>
 			        	<tbody>
 			        	{fruits.map((item, index)=>{
+
 			        		return(
 		  					<tr key={item.id}>
 		  						<td>{index+1}  </td>

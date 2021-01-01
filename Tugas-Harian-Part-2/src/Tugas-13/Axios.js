@@ -3,28 +3,39 @@ import '../Tugas-12/Lists.css'
 import axios from 'axios'
 
 function ListsAxios() {
+	const [fruitsMirror, setFruitsMirror] = useState([])
 	const [fruits, setFruits] = useState([])
-	const [fruitInput, setFruitInput] = useState({name:'',weight:'',price:'',id:null})
+	const [fruitInput, setFruitInput] = useState({name:'',weight:'',price:'',id:null,search:''})
 	const [refresh , setRefresh] = useState(false)
 	const [loading, setLoading] = useState('')
 	const resetInput = () => {
-		 setFruitInput({name:'',weight:'',price:'',id:''})
+		 setFruitInput({name:'',weight:'',price:'',id:'',search:''})
 		 setRefresh(true)
 	}
+	
+	// console.log(fruitInput)
 	const url = 'http://backendexample.sanbercloud.com/api/fruits'
 	// console.log(fruits)
 	const getFruits = async () => {
 		try {
 			let response = await axios.get(url)
-			setFruits(response.data)
+			setFruitsMirror(response.data)
+
 		 } catch (e) {
 			console.log(e.message)
 		}
 		setRefresh(false)
+		setFruits([...fruitsMirror])
 	} 
 	useEffect(()=>{
-		getFruits();
-	}, [ refresh ])
+		axios.get(url).then(res => {
+			setFruitsMirror(res.data)
+		})
+		axios.get(url).then(res => {
+			setFruits(res.data)
+		})
+		setRefresh(false)
+	}, [ refresh,  ])
 	useEffect(() => {
 		const interval= setInterval(() =>{
 			setLoading('=' + loading)
@@ -43,6 +54,13 @@ function ListsAxios() {
 			.then(()=>{ resetInput() }) 
 		}
 	}
+	const handleSearch = (e) => {
+		e.preventDefault()
+		let filter = fruitsMirror.filter( (el,index) => {
+			return el.name.toLowerCase().indexOf(fruitInput.search) !== -1 
+		})
+		setFruits([...filter])
+	}
 	const handleChange=(e)=>{ //handle saat isi form
 		let name = e.target.name
 		let value = e.target.value
@@ -59,9 +77,19 @@ function ListsAxios() {
 				setFruitInput({...fruitInput,weight:value});
 				break
 			}
+			case 'search': {
+				setFruitInput({...fruitInput,search:value.toLowerCase()});
+				// let filter = fruitsMirror.filter( (el,index) => {
+				// 	return el.name.toLowerCase().indexOf(value) !== -1 
+				// })
+				// setFruits([...filter])
+				if(value.length === 0){
+					setFruits([...fruitsMirror])
+				}
+				break
+			}
 			default:{break;}
 		}
-		
 	}
 	const handleEdit=(e)=>{ //menampilkan data yg akan diedit di form
 		let id = parseInt(e.target.value)
@@ -86,6 +114,12 @@ function ListsAxios() {
 		<div className="app">
 			<div className="card-blue">
 			      <h2>Tabel Harga Buah</h2>
+			      <div style={{display:"flex",justifyContent:"center",padding:'10px'}}>
+				      <form onSubmit={handleSearch}>
+				      	<input type="search" onChange={handleChange} value={fruitInput.search}name="search" placeholder="Search..."/>
+				      	<button type="submit">Search</button>
+				      </form>
+			      </div>
 			        <div>
 						<table>
 			    { fruits.length === 0  ? ( <> 
@@ -115,7 +149,9 @@ function ListsAxios() {
 			            </tr>
 			        	</thead>
 			        	<tbody>
-	            		{fruits.map((item, index)=>
+	            		{fruits.map((item, index)=>{
+
+	            			return(
 		  					<tr key={item.id}>
 		  						<td>{index+1}  </td>
 				  	            <td>{item.name}</td>
@@ -124,6 +160,8 @@ function ListsAxios() {
 				  	            <td><button className="btn edit" onClick={handleEdit} value={item.id}>edit</button>
 				  	            	<button className="btn delete" onClick={handleDelete} value={item.id}>delete</button></td>
 				  	        </tr>
+	            				)
+	            			}
 			           	)}
 			        	</tbody>
 	          		</> )

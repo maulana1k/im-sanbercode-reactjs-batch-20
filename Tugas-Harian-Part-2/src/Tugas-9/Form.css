@@ -2,8 +2,8 @@
   display:flex;
   flex-direction: column;
   margin: 10px;
-  border-radius: 10px;
-  box-shadow:1px 1px 10px 0 lightgrey;
+  border-radius: 5px;
+ /* box-shadow:1px 1px 10px 0 lightgrey;*/
   background-color: #17a2b8;
 }
 h2{
@@ -17,8 +17,8 @@ h2{
   margin:10px 0 0 0;
   padding: 4% 6% 6% 6%;
   background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px
 }
 #nama{
   /*margin-left: 20px;*/
