@@ -1,5 +1,22 @@
+body{
+  font-family: 'Inter', sans-serif;
+}
+.crimg{
+    width:100px;
+    overflow: hidden;
+    object-fit: cover;
+    
+  }
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (max-width: 600px) {
+  .crimg{
+    width:0vw;
+  }
+}
 .App {
   text-align: center;
+  font-family: 'Inter',sans-serif;
 }
 
 .App-logo {
