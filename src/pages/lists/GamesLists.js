@@ -163,7 +163,7 @@ export default function GamesLists(){
 	        </Form>
 	        </div>
 	        <Link to="/create/game" ><Button type="primary" ><PlusOutlined />add games</Button></Link>
-			<Table  size="small" columns={columns} dataSource={games} pagination={{ pageSize:5}} scroll={{x:1100}} style={{marginTop:'20px'}}/>
+			<Table  size="small" columns={columns} dataSource={games} pagination={{ pageSize:10}} scroll={{x:1100}} style={{marginTop:'20px'}}/>
         </div>
 		</Content>
 		);
