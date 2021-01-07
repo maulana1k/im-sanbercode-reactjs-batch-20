@@ -25,10 +25,10 @@ function Main(){
 		        <Footer style={{ textAlign: 'center',margin:0,fontWeight:'bolder',color:'grey' }}>
 		        	<p>NetPlay ©2021 Created with <HeartFilled/> by Maulana Imamul Khaq</p>
 		        	
-		        	<p><InstagramOutlined /> @maulanna.i</p> 
-		        	<p><TwitterOutlined /> @mlnhaq_</p>
-		        	<p><GithubOutlined /> @maulanna1k</p>
-		        	<p><WhatsAppOutlined /> Contact me at +6289-7680-9782</p>
+		        	<p><InstagramOutlined /> <a href="https://www.instagram.com/maulanna.i/" target="_blank" >@maulanna.i</a></p> 
+		        	<p><TwitterOutlined /><a href="https://twitter.com/mlnhaq_" target="_blank" > @mlnhaq_</a></p>
+		        	
+		        	<p><WhatsAppOutlined /> <a href="https://wa.me/628976809782" target="_blank" >Contact me</a> at +6289-7680-9782</p>
 		        	<p><MailOutlined /> mm930199@gmail.com</p>
 		        	
 		        	</Footer>

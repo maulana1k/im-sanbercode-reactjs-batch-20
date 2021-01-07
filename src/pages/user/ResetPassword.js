@@ -1,7 +1,7 @@
 import React,{ useState, useContext} from 'react'
 import axios from 'axios'
 import {Link,Redirect,useHistory} from 'react-router-dom'
-import { Form, Input, Button, Checkbox, Layout } from 'antd';
+import { Form, Input, Button, Checkbox, Layout,Col } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {UserContext} from '../../component/UserContext'
 
@@ -38,10 +38,14 @@ export default function ResetPassword()  {
 
   
   return (
+    <div style={{display:'flex',justifyContent:'center',}} >
+      
+    <Col xs={64} sm={18} md={12} >
     <Content className="site-layout-background"
             style={{
-              padding:'5%',
-              margin: '8% 25%',
+              padding:'10% 20%',
+              marginTop:'10vw',
+              marginBottom:'10vw',
               minHeight: 280,
               background:"#fff",
              borderRadius:'5px'
@@ -101,5 +105,7 @@ export default function ResetPassword()  {
       
     </Form>
       </Content>
+      </Col>
+      </div>
   );
 };

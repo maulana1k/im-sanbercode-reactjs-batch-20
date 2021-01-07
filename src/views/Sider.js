@@ -40,9 +40,6 @@ export default function Sider  () {
 	
 	          </SubMenu>
 	        </Menu>
-		 
-		 
-		  	
 	      </Sider>
 		
 		  

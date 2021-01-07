@@ -32,14 +32,14 @@ export default function Jumbotron(){
           backgroundImage:`linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
           url(${el.image_url})`,
           backgroundPosition:'center',
-          height:'35vw',
+          height:'40vw',
           display:'flex',
           justifyContent:'flex-start',
           padding:40,
           alignItems:'flex-end'
         }} >
           <Space size={16} direction='vertical' >
-          <h2 style={{color:'white',display:'block'}} >{el.title}</h2>
+          <h2 style={{color:'white',display:'block',fontSize:'4vw'}} >{el.title}</h2>
           <Rate disabled defaultValue={el.rating/2} />
           
           </Space>
@@ -54,18 +54,18 @@ export default function Jumbotron(){
             <div style={{
               backgroundImage:`linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
               url(${el.image_url})`,
-              height:'35vw',
+              height:'40vw',
               display:'flex',
               justifyContent:'flex-start',
               padding:40,
               alignItems:'flex-end'
             }} >
               <Space size={16} direction='vertical' >
-              <h2 style={{color:'white',display:'block'}} >{el.name}</h2>
-              <h4 style={{color:'white',display:'block'}} >{el.platform}</h4>
+              <h2 style={{color:'white',display:'block',fontSize:'4vw'}} >{el.name}</h2>
+              <h4 style={{color:'white',display:'block',fontSize:'2vw'}} >{el.platform}</h4>
               <div style={{color:'white'}} >
-              {el.multiplayer == 1 && <p style={{border:'4px solid white',padding:5,float:'left',margin:5}} ><b>Multiplayer</b></p>}
-              {el.singlePlayer == 1 && <p style={{border:'4px solid white',padding:5, float:'left',margin:5}} ><b>Singleplayer</b></p>}
+              {el.multiplayer == 1 && <p style={{border:'4px solid white',padding:5,float:'left',margin:5,fontSize:'2vw'}} ><b>Multiplayer</b></p>}
+              {el.singlePlayer == 1 && <p style={{border:'4px solid white',padding:5, float:'left',margin:5,fontSize:'2vw'}} ><b>Singleplayer</b></p>}
               </div>
               </Space>
             </div>
