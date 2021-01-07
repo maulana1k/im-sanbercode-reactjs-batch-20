@@ -3,24 +3,26 @@ import {Link} from 'react-router-dom'
 import {UserContext} from '../component/UserContext'
 import { Layout, Menu,Anchor,Col,Avatar} from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined,InboxOutlined,CloudUploadOutlined } from '@ant-design/icons';
-
+import './sider.css'
 const { SubMenu } = Menu;
 
 export default function Sider  () {
 	const [user] = useContext(UserContext)
 	const { Header, Content, Sider, Footer } = Layout;
 	const [collapsed, setCollapsed] = useState(true)
-
+	let w = window.innerWidth
+	console.log(w)	
 	const onCollapse = () => {
 		if(collapsed === false){	setCollapsed(true) }
 		else{setCollapsed(false)}
   	};
-	return(
+	return(<>
 		
-		 <Sider md={3} sm={0}  className="site-layout-background"
-		 collapsible collapsed={collapsed} onCollapse={onCollapse}
-		  >
+		 <Sider md={3} sm={0} id="sidebar1" className="site-layout-background"
+ 		 	collapsible collapsed={collapsed} onCollapse={onCollapse}
+		 		 		  >
 	        <Menu
+	        theme="dark"
 	          mode="inline"
 	          style={{ height: '100%', borderRight: 0 }}
 	        >
@@ -40,7 +42,10 @@ export default function Sider  () {
 	        </Menu>
 		 
 		 
+		  	
 	      </Sider>
 		
+		  
+		</>
 		)
 }

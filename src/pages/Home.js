@@ -48,7 +48,7 @@ function Home(){
 	          <h2 style={{width:'100%'}}>Trending Movies</h2>
 		            { movies.map( el => {
 		            	return(
-		            		<Col sm={12} md={6}>
+		            		<Col  xs={24} sm={12} md={6}>
 			            		<Link to={`/movies/details/${el.id}`} style={{textDecoration:'none'}} >
 			            		<Card
 								    hoverable

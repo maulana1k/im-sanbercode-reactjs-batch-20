@@ -17,7 +17,7 @@ export default function Games(){
 		axios.get('https://backendexample.sanbersy.com/api/data-game')
 		.then( res => {
 			setGames(res.data)
-		})
+		}).catch( err => {console.log(err.message)})
 	},[refresh])
 
 	const handleSearch = (values) => {
@@ -70,7 +70,7 @@ export default function Games(){
 								    style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}
 								    cover={<img alt="example" src={el.image_url} style={{height:'20vw',overflow:'hidden',objectFit:'cover'}} />}
 								  >
-								    <Meta title={el.name.toUpperCase()} description={el.genre}  />
+								    <Meta title={( el.name ? el.name.toUpperCase() : '')} description={el.genre}  />
 								    
 								</Card>
 								</Link>

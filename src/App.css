@@ -1,6 +1,12 @@
 body{
   font-family: 'Inter', sans-serif;
 }
+@media only screen and (max-width: 576) {
+  #sidebar {
+    display:none;
+  }
+}
+#sidebar{ width: 400px  }
 .crimg{
     width:100px;
     overflow: hidden;

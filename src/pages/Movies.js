@@ -19,7 +19,7 @@ export default function Movies(){
 		axios.get('https://backendexample.sanbersy.com/api/data-movie')
 		.then( res => {
 			setMovies(res.data)
-		})
+		}).catch( err => {console.log(err.message)})
 		
 	},[refresh])
 

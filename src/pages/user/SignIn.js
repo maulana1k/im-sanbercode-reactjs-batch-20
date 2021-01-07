@@ -4,7 +4,7 @@ import axios from 'axios'
 import {Link,useHistory} from 'react-router-dom'
 import {UserContext} from '../../component/UserContext.js'
 
-import { Form, Input, Button, Checkbox, Layout ,Alert,message} from 'antd';
+import { Form, Col , Input, Button, Checkbox, Layout ,Alert,message} from 'antd';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
 
 export default function SignIn()  {
@@ -37,10 +37,16 @@ export default function SignIn()  {
   };
 
   return (
+
+    <div style={{display:'flex',justifyContent:'center',}} >
+      
+    <Col xs={64} sm={18} md={12} >
+      
     <Content className="site-layout-background"
             style={{
-              padding:'5% 8%',
-              margin: '8% 25%',
+              padding:' 10% 20%',
+              marginTop:'10vw',
+              marginBottom:'10vw',
               minHeight: 280,
               background:"#fff",
              borderRadius:'5px'
@@ -98,5 +104,7 @@ export default function SignIn()  {
     </Form>
 
       </Content>
+    </Col>
+    </div>
   );
 };

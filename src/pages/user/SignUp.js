@@ -3,7 +3,7 @@ import axios from 'axios'
 import {UserContext} from '../../component/UserContext.js'
 
 import {Link,useHistory} from 'react-router-dom'
-import { Form, Input, Button, Checkbox, Layout,Alert,message } from 'antd';
+import { Form, Input, Col,Button, Checkbox, Layout,Alert,message } from 'antd';
 import { UserOutlined, LockOutlined,MailOutlined } from '@ant-design/icons';
 
 export default function SignUp()  {
@@ -37,10 +37,14 @@ export default function SignUp()  {
   };
 
   return (
+    <div style={{display:'flex',justifyContent:'center',}} >
+      
+    <Col xs={64} sm={18} md={12} >
     <Content className="site-layout-background"
             style={{
-              padding:'5% 8%',
-              margin: '8% 25%',
+              padding:' 10% 20%',
+              marginTop:'10vw',
+              marginBottom:'10vw',
               minHeight: 280,
               background:"#fff",
              borderRadius:'5px'
@@ -105,5 +109,7 @@ export default function SignUp()  {
         <Link to='/signin'>Already have an account? Login now.</Link>
     </Form>
       </Content>
+      </Col>
+      </div>
   );
 };

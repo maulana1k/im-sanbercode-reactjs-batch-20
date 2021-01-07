@@ -26,11 +26,11 @@ export default function Header ()  {
 	}
 	
 	return(
-		<Header className="header" height={60} width={100}  >
+		<Header className="header" height={100} width={100}  >
 	      <div  style={{float:'left',height:'100%',display:'flex',alignItems:'center'}} >
-	      		<h1 style={{color:'white',fontFamily:'Operator Mono',fontWeight:'bold',fontSize:'7vh',margin:0}} >NET<span style={{color:'orangered'}} >PLAY</span></h1>
+	      		<h1 style={{color:'white',fontFamily:'Operator Mono',fontWeight:'bold',fontSize:'5vh',margin:0}} >NET<span style={{color:'orangered'}} >PLAY</span></h1>
 	      	</div>
-	      <Menu height={60} theme="dark" mode="horizontal" style={{float:'right'}} defaultSelectedKey={['1']} >
+	      <Menu height={100} theme="dark" mode="horizontal" style={{float:'right'}} defaultSelectedKey={['1']} >
 	        <Menu.Item key="1" >
 	        	<Link exact to='/'><HomeOutlined/></Link>
 	        </Menu.Item>
