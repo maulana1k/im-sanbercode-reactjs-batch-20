@@ -39,7 +39,7 @@ export default function SignUp()  {
   return (
     <div style={{display:'flex',justifyContent:'center',}} >
       
-    <Col xs={64} sm={18} md={12} >
+    <Col xs={24} sm={24} md={12} >
     <Content className="site-layout-background"
             style={{
               padding:' 10% 20%',
@@ -47,7 +47,7 @@ export default function SignUp()  {
               marginBottom:'10vw',
               minHeight: 280,
               background:"#fff",
-             borderRadius:'5px'
+             
             }}
           >
     <h2 style={{textAlign:'center'}}>Sign up</h2>

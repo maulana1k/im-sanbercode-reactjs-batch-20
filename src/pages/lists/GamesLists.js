@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext,useForm} from 'react'
 import axios from 'axios'
 import {Link } from 'react-router-dom'
 import {UserContext} from '../../component/UserContext'
-import { Table,Layout,Button,Cascader,DatePicker,Space,Card,Input,Select,Form ,Modal,PageHeader} from 'antd';
+import { Table,Layout,Button,Cascader,DatePicker,Col,Space,Card,Input,Select,Form ,Modal,PageHeader} from 'antd';
 import {EditOutlined,ClearOutlined, DeleteOutlined, FilterOutlined,ExclamationCircleOutlined,PlusOutlined} from '@ant-design/icons'
 
 const {Content} = Layout
@@ -26,7 +26,7 @@ export default function GamesLists(){
 		    		{headers: {"Authorization" : "Bearer "+ user.token}})
 		    	.then(()=>{
 		    		setRefresh(true)
-		    	})
+		    	}).catch( err => { console.log(err.response) })
 		    },
 		    onCancel() {  console.log('Cancel'); },
 		  	});
@@ -45,14 +45,14 @@ export default function GamesLists(){
 				    mp:(el.multiplayer == 1 ? 'yes' : 'no'),
 				    platform:el.platform,
 				    release:el.release,
-				    img:(<Card style={{height:'5vw'}} 
+				    img:(<Card style={{height:50}} 
 						cover={<img src={el.image_url} alt="f" style={{overflow:'hidden',objectFir:'cover'}} />} ></Card>),
 				    action: (<span><Button type="primary"  style={{marginRight:'10px'}}>
 				    		<Link to={`/lists/games/edit/${el.id}`} ><EditOutlined /></Link></Button>
 							<Button danger onClick={() => DeleteWarning(el.id,el.name)}  ><DeleteOutlined /></Button></span>)
 				}
 			}))
-		})
+		}).catch( err => { console.log(err.response) })
 		
 	},[refresh])
 	const columns = [
@@ -79,7 +79,7 @@ export default function GamesLists(){
 		      compare: (a, b) => a.release - b.release,
 		      multiple: 3,
 		    },width:80},
-		  { title:'Edit/Delete', dataIndex:'action',fixed:'right',width:120}
+		  { title:'Edit/Delete', dataIndex:'action',width:120}
 	];
 	
 
@@ -118,20 +118,22 @@ export default function GamesLists(){
 		setGames([...filter])
 	}
 	return(
+		<div style={{display:'flex',justifyContent:'center'}} >
+			<Col xs={24} sm={24} md={20} >
 		<Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '3%',
+	            margin: '5% 0',
 	            minHeight: 280,
 	            background:"#fff",
-	            borderRadius:5
+	            
 	          }}
 	        >
 	        <PageHeader
 		      ghost={false}
 		      onBack={() => window.history.back()}
 		      title="Game Lists"
-		      style={{borderRadius:5}}
+		      
 		      ></PageHeader>
         <div style={{padding:'0 3%'}} >
 	        
@@ -162,9 +164,11 @@ export default function GamesLists(){
 		        </Space>
 	        </Form>
 	        </div>
-	        <Link to="/create/game" ><Button type="primary" ><PlusOutlined />add games</Button></Link>
-			<Table  size="small" columns={columns} dataSource={games} pagination={{ pageSize:10}} scroll={{x:1100}} style={{marginTop:'20px'}}/>
+	        <Link to="/create/game" ><Button type="primary" ><PlusOutlined /> add</Button></Link>
+			<Table  size="small" columns={columns} dataSource={games} pagination={{ pageSize:10}} scroll={{x:900}} style={{marginTop:'20px'}}/>
         </div>
 		</Content>
+		</Col>
+		</div>
 		);
 }

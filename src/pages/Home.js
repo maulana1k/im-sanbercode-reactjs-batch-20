@@ -29,14 +29,15 @@ function Home(){
 	console.log(movies)
 	console.log(games)
 	return(<>
-		
+		<div style={{display:'flex',justifyContent:'center',margin:'5% 0'}} >
+			<Col xs={24} sm={24} md={20} >
          
 	        <Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '8% 5%',
+	            margin: 0,
 	            minHeight: 280,
-	            background:'#e9ecef',
+	            background:'white',
 	            
 	          }}
 	        >
@@ -45,15 +46,15 @@ function Home(){
 	        </div>
 	          <Divider />
 	          <div style={{padding:'3%',display:'flex',flexWrap:'wrap'}} >
-	          <h2 style={{width:'100%'}}>Trending Movies</h2>
+	          <h2 style={{width:'100%',textAlign:'center'}}>Trending Movies</h2>
 		            { movies.map( el => {
 		            	return(
 		            		<Col  xs={24} sm={12} md={6}>
 			            		<Link to={`/movies/details/${el.id}`} style={{textDecoration:'none'}} >
 			            		<Card
 								    hoverable
-								    style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}
-								    cover={<img alt="example" src={el.image_url} style={{height:'20vw',overflow:'hidden',objectFit:'cover'}} />}
+								    style={{borderRadius:10,overflow:'hidden',margin:20 }}
+								    cover={<img alt="example" src={el.image_url} style={{height:300,overflow:'hidden',objectFit:'cover'}} />}
 								  >
 								    <Meta title={el.title.toUpperCase()} /><br/>
 								    <Rate allowHalf  disabled defaultValue={el.rating/2} />
@@ -93,8 +94,8 @@ function Home(){
 	          		
 		          </div>
 		          <Divider/>
-		          <div style={{padding:'3%',display:'flex',flexWrap:'wrap'}} >
-		          <h2 style={{width:'100%'}} >Top Games</h2>
+		          <div style={{padding:'5%',display:'flex',flexWrap:'wrap'}} >
+		          <h2 style={{width:'100%',textAlign:'center'}} >Top Games</h2>
 		          
 		            
 		            { games.map( el => {
@@ -103,8 +104,8 @@ function Home(){
 			            		<Link to={`/games/details/${el.id}`} style={{textDecoration:'none'}}>
 					            <Card
 								    hoverable
-								    style={{ borderRadius:10,overflow:'hidden',margin:'1vw' }}
-								    cover={<img alt="example" src={el.image_url} style={{height:'20vw',overflow:'hidden',objectFit:'cover'}} />}
+								    style={{ borderRadius:10,overflow:'hidden',margin:20 }}
+								    cover={<img alt="example" src={el.image_url} style={{height:300,overflow:'hidden',objectFit:'cover'}} />}
 								  >
 								    <Meta title={el.name.toUpperCase()} description={el.genre} />
 								    <Meta  /><br/>
@@ -145,6 +146,8 @@ function Home(){
 	          </div>
 	          <BackTop/>
 	   	 	</Content>
+			</Col>
+			</div>
 	   	 	</>
 		)
 }

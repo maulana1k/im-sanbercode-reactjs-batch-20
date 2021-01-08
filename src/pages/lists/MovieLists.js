@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext,useForm} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 import {UserContext} from '../../component/UserContext'
-import { Table,Layout,Button,Cascader,DatePicker,Space,Rate,Input,Select,Modal,Form,PageHeader,Card } from 'antd';
+import { Table,Layout,Button,Cascader,DatePicker,Col,Space,Rate,Input,Select,Modal,Form,PageHeader,Card } from 'antd';
 import {EditOutlined, ClearOutlined,DeleteOutlined, FilterOutlined,ExclamationCircleOutlined,PlusOutlined} from '@ant-design/icons'
 
 const {Content} = Layout
@@ -25,7 +25,7 @@ export default function MovieLists(){
 		    		{headers: {"Authorization" : "Bearer "+ user.token}})
 		    	.then(()=>{
 		    		setRefresh(true)
-		    	})
+		    	}).catch( err => { console.log(err.response) })
 		    	console.log(id); },
 		    onCancel() {  console.log('Cancel'); },
 		  	});
@@ -45,14 +45,14 @@ export default function MovieLists(){
 					year:el.year,
 					rating:el.rating,
 					description:el.description,
-					image:(<Card style={{height:'5vw'}} 
-						cover={<img src={el.image_url} alt="f" style={{overflow:'hidden',objectFir:'cover'}} />} ></Card>),
+					image:(<Card style={{height:50}} 
+						cover={<img src={el.image_url} alt="this cover" style={{overflow:'hidden',objectFir:'cover'}} />} ></Card>),
 					action: (<span><Button type="primary"  style={{marginRight:'10px'}}>
 				    		<Link to={`/lists/movies/edit/${el.id}`} ><EditOutlined /></Link></Button>
 							<Button danger onClick={() => DeleteWarning(el.id,el.title)} ><DeleteOutlined /></Button></span>)
 				}
 			}))
-		})
+		}).catch( err => { console.log(err.response) } )
 	},[refresh])
 	const columns = [
 		  { title:'No.', dataIndex:'no', sorter: {
@@ -93,7 +93,7 @@ export default function MovieLists(){
 				    ],
 				    onFilter: (value, record) => record.rating === value},
 		  { title:'Description', dataIndex:'description',ellipsis:true},
-		  { title:'Edit/Delete', dataIndex:'action',width:120,fixed:'right'}
+		  { title:'Edit/Delete', dataIndex:'action',width:120}
 	];
 
 	const [data, setData] = useState([])
@@ -123,20 +123,22 @@ export default function MovieLists(){
 	}
 
 	return(
+		<div style={{display:'flex',justifyContent:'center'}} >
+			<Col xs={24} sm={24} md={20} >
 		<Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '3%',
+	            margin: '5% 0',
 	            minHeight: 280,
 	            background:"#fff",
-	            borderRadius:'10px'
+	            
 	          }}
 	        >
 	        <PageHeader
 		      ghost={false}
 		      onBack={() => window.history.back()}
 		      title="Movie Lists"
-		      style={{borderRadius:5}}
+		      
 		      ></PageHeader>
 	    <div style={{display:'flex'}} ></div>
         <div style={{padding:' 0 3vw'}} >
@@ -164,9 +166,11 @@ export default function MovieLists(){
 		        </Space>
 	        </Form>
 	        </div>
-	        <Link to="/create/movie" ><Button type="primary" ><PlusOutlined />add movies</Button></Link>
-			<Table size="small" columns={columns} dataSource={movies}  pagination={{ pageSize: 10 }} scroll={{ x: 1300 }}  style={{marginTop:'20px'}}/>
+	        <Link to="/create/movie" ><Button type="primary" ><PlusOutlined /> add</Button></Link>
+			<Table size="small" columns={columns} dataSource={movies}  pagination={{ pageSize: 10 }} scroll={{ x: 1000 }}  style={{marginTop:'20px'}}/>
         </div>
 		</Content>
+		</Col>
+		</div>
 		);
 }

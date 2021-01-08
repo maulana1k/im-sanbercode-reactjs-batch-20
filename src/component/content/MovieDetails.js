@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import {Layout,Typography,Divider,Rate,Card,PageHeader} from 'antd'
+import {Layout,Typography,Divider,Rate,Card,PageHeader,Col} from 'antd'
 import {ClockCircleOutlined,ReadOutlined} from '@ant-design/icons'
 
 const {Content} = Layout
@@ -24,10 +24,12 @@ export default class MovieDetails extends Component  {
 	render(){
 		const {image_url,title,duration,rating,review,genre,year,description} = this.state.movieData
 		return(
+			<div style={{display:'flex',justifyContent:'center'}} >
+				<Col xs={24} sm={24} md={20} >
 			<Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '8%',
+	            margin: '8% 0',
 	            minHeight: 280,
 	            background:'#e9ecef',
 	            borderRadius:'5px'
@@ -39,14 +41,17 @@ export default class MovieDetails extends Component  {
 		      title="Details"
 		      ></PageHeader>
 	        <div style={{display:'flex'}} >
-	        	<div style={{width:'100%' ,display:'flex',alignItems:'flex-end' ,backgroundImage:`linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),url(${this.state.movieData.image_url})`}} >
+	        	<div style={{width:'100%' ,display:'flex',flexWrap:'wrap',alignItems:'flex-end' ,backgroundImage:`linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),url(${this.state.movieData.image_url})`}} >
 		        	<div
-					    style={{ width: '40vw',height:'40vw',overflow:'hidden' }}
+					    style={{ overflow:'hidden' }}
 					  >
-					    <img alt="example" src={image_url} style={{height:'40vw',objectFit:'cover'}} />
+					  <Col xs={24} sm={24} md={12} >
+					    <img alt="example" src={image_url} style={{height:300,objectFit:'cover'}} />
+					  </Col>
 					  </div>
-		        	<div style={{padding:'3vw',width:'70%',color:'white'}} >
-			        	<p style={{fontSize:'6vw'}} ><b>{title}</b></p>
+				  <Col xs={24} sm={24} md={12} >
+		        	<div style={{padding:20,color:'white'}} >
+			        	<p style={{fontSize:40}} ><b>{title}</b></p>
 			        	
 			        	<p style={{fontSize:24}}><b>{year}</b></p>
 		        		<p style={{fontSize:24}}><b>{genre}</b></p>
@@ -55,6 +60,7 @@ export default class MovieDetails extends Component  {
 		        		<Rate allowHalf  disabled value={(rating)/2} />
 		        		<Divider/>
 		        	</div>
+				  </Col>
 	        	</div>
 	        </div>
 	        	<div style={{margin:'2vw',padding:'2vw',background:'white'}} >
@@ -66,6 +72,8 @@ export default class MovieDetails extends Component  {
 	        		<Divider/>
 
 	        </Content>
+	        </Col>
+	        </div>
 			)
 	}
 	

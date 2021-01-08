@@ -40,7 +40,7 @@ export default function ResetPassword()  {
   return (
     <div style={{display:'flex',justifyContent:'center',}} >
       
-    <Col xs={64} sm={18} md={12} >
+    <Col xs={24} sm={24} md={12} >
     <Content className="site-layout-background"
             style={{
               padding:'10% 20%',
@@ -48,10 +48,10 @@ export default function ResetPassword()  {
               marginBottom:'10vw',
               minHeight: 280,
               background:"#fff",
-             borderRadius:'5px'
+            
             }}
           >
-    <h2 style={{textAlign:'center'}}>Change Password</h2>
+    <h3 style={{textAlign:'center'}}>Change Password</h3><br/>
     <Form
       name="normal_login"
       className="login-form"

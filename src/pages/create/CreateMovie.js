@@ -27,10 +27,12 @@ export default function CreateMovie  ()  {
 
   	return (
     <>
+    <div style={{display:'flex',justifyContent:'center'}} >
+			<Col xs={24} sm={24} md={20} >
     <Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '5% 10%',
+	            margin: '5% 0',
 	            minHeight: 280,
 	            background:'#e9ecef',
 	            borderRadius:'5px'
@@ -41,12 +43,12 @@ export default function CreateMovie  ()  {
 		      onBack={() => window.history.back()}
 		      title="Upload Movie"
 		      ></PageHeader>
-        <div style={{display:'flex'}} >
-	        <Col sm={0} md={10} >
+        <div style={{display:'flex',flexWrap:'wrap'}} >
+	        <Col xs={0} sm={0} md={10} >
 			    <img  src="https://thatrogersguy.files.wordpress.com/2011/01/maisey-poster-final-copy.jpg?w=500" 
 			    alt="" style={{minHeight:'100%',maxWidth:'100%', objectFit:'cover'}} />
 		    </Col>
-		    <div style={{width:'90%', padding:'2vw',margin:'2vw',background:'white'}} >
+		    <div style={{width:'100%', padding:20,margin:20,background:'white'}} >
 		    
 		      <Form
 		        labelCol={{
@@ -93,6 +95,8 @@ export default function CreateMovie  ()  {
 		    </div>
         </div>
     </Content>
+    </Col>
+    </div>
     </>
   );
 };

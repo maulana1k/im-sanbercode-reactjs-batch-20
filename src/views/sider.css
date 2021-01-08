@@ -1,9 +1,9 @@
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 575px) {
   #sidebar1 {
     display:none;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 576px) {
   #sidebar1 {
     display:block;
   }

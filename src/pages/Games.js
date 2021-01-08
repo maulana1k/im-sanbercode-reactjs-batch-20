@@ -34,20 +34,22 @@ export default function Games(){
 	
 	
 	return(<>
-		
+		<div style={{display:'flex',justifyContent:'center'}} >
+			<Col xs={24} sm={24} md={20} >
+
         <div style={{display:'flex',justifyContent:'center',margin:'20px'}} >
 		    <Search
 			      placeholder="Search movies..."
 			      allowClear
 			      size="large"
-			      style={{width:'40vw'}}
+			      style={{width:'60vw'}}
 			      onSearch={handleSearch}
 			    />
 	    </div>
         <Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '0 5% 8%',
+	            margin: 0,
 	            minHeight: 280,
 	            background:"#fff",
 	            borderRadius:'5px'
@@ -63,12 +65,12 @@ export default function Games(){
 	          
 		            { games.map( el => {
 		            	return(
-		            		<Col sm={12} md={6}>
+		            		<Col xs={24} sm={12} md={6}>
 			            		<Link to={`/games/details/${el.id}`} style={{textDecoration:'none'}}>
 					            <Card
 								    hoverable
-								    style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}
-								    cover={<img alt="example" src={el.image_url} style={{height:'20vw',overflow:'hidden',objectFit:'cover'}} />}
+								    style={{borderRadius:10,overflow:'hidden',margin:20 }}
+								    cover={<img alt="example" src={el.image_url} style={{height:300,overflow:'hidden',objectFit:'cover'}} />}
 								  >
 								    <Meta title={( el.name ? el.name.toUpperCase() : '')} description={el.genre}  />
 								    
@@ -84,19 +86,19 @@ export default function Games(){
 	          		<Skeleton  active/>
 	          	</Card>
 	            </Col>
-	            <Col sm={12} md={6} >
+	            <Col xs={24} sm={12} md={6} >
 	          	<Card style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}>
 	          		<Skeleton  active/>
 	          		<Skeleton  active/>
 	          	</Card>
 	            </Col>
-	            <Col sm={12} md={6} >
+	            <Col xs={24} sm={12} md={6} >
 	          	<Card style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}>
 	          		<Skeleton  active/>
 	          		<Skeleton  active/>
 	          	</Card>
 	            </Col>
-	            <Col sm={12} md={6} >
+	            <Col xs={24} sm={12} md={6} >
 	          	<Card style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}>
 	          		<Skeleton  active/>
 	          		<Skeleton  active/>
@@ -106,6 +108,8 @@ export default function Games(){
 	         </div>
 	        
 	    </Content>
+	    </Col>
+	    </div>
 	    </>
 		)
 }

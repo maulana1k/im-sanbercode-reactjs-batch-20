@@ -27,7 +27,7 @@ function Main(){
 		        	
 		        	<p><InstagramOutlined /> <a href="https://www.instagram.com/maulanna.i/" target="_blank" >@maulanna.i</a></p> 
 		        	<p><TwitterOutlined /><a href="https://twitter.com/mlnhaq_" target="_blank" > @mlnhaq_</a></p>
-		        	
+		        	<p><GithubOutlined/><a href="https://github.com/maulana1k/im-sanbercode-reactjs-batch-20/tree/master" target="_blank" > Source code</a></p>
 		        	<p><WhatsAppOutlined /> <a href="https://wa.me/628976809782" target="_blank" >Contact me</a> at +6289-7680-9782</p>
 		        	<p><MailOutlined /> mm930199@gmail.com</p>
 		        	

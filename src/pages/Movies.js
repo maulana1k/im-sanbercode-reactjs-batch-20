@@ -36,20 +36,23 @@ export default function Movies(){
 	}
 	
 	return(<>
+		<div style={{display:'flex',justifyContent:'center'}} >
+			<Col xs={24} sm={24} md={20} >
+				
 		
 	    <div style={{display:'flex',justifyContent:'center',margin:'20px'}} >
 		    <Search
 			      placeholder="Search movies..."
 			      allowClear
 			      size="large"
-			      style={{width:'40vw'}}
+			      style={{width:'60vw'}}
 			      onSearch={handleSearch}
 			    />
 	    </div>
 	    <Content className="site-layout-background"
 	          style={{
 	            padding: 0,
-	            margin: '0 5% 8%',
+	            margin: 0,
 	            minHeight: 280,
 	            background:"#fff",
 	            borderRadius:'5px'
@@ -61,18 +64,18 @@ export default function Movies(){
 		      title="All Movies"
 		     
 		      ></PageHeader>
-        <div style={{padding:'0 3%',display:'flex',flexWrap:'wrap'}} >
+        <div style={{padding:'3%',display:'flex',flexWrap:'wrap'}} >
 	          
 	          <Divider/>
-	       
+	       	
 		            { movies.map( el => {
 		            	return(
-		            		<Col sm={12} md={6} >
+        		<Col xs={24} sm={12} md={6} >
 			            		<Link to={`/movies/details/${el.id}`} style={{textDecoration:'none'}} >
 			            		<Card
 								    hoverable
-								    style={{ borderRadius:10,overflow:'hidden',margin:'1vw' }}
-								    cover={<img alt="example" src={el.image_url} style={{height:'20vw',overflow:'hidden',objectFit:'cover'}} />}
+								    style={{ borderRadius:10,overflow:'hidden',margin:20 }}
+								    cover={<img alt="example" src={el.image_url} style={{height:300,overflow:'hidden',objectFit:'cover'}} />}
 								  >
 								    <Meta title={el.title} description={el.review ? el.review.slice(0,25)+(el.review.length>25?'...':'') : '' } /><br/>
 								    <Rate allowHalf  disabled defaultValue={el.rating/2} />
@@ -88,19 +91,19 @@ export default function Movies(){
 	          		<Skeleton  active/>
 	          	</Card>
 	            </Col>
-	            <Col sm={12} md={6} >
+	            <Col xs={24} sm={12} md={6} >
 	          	<Card style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}>
 	          		<Skeleton  active/>
 	          		<Skeleton  active/>
 	          	</Card>
 	            </Col>
-	            <Col sm={12} md={6} >
+	            <Col xs={24} sm={12} md={6} >
 	          	<Card style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}>
 	          		<Skeleton  active/>
 	          		<Skeleton  active/>
 	          	</Card>
 	            </Col>
-	            <Col sm={12} md={6} >
+	            <Col xs={24} sm={12} md={6} >
 	          	<Card style={{borderRadius:10,overflow:'hidden',margin:'1vw' }}>
 	          		<Skeleton  active/>
 	          		<Skeleton  active/>
@@ -110,6 +113,8 @@ export default function Movies(){
 	          	
 	          </div>
 	    </Content>
+			</Col>
+		</div>
 	    </>
 		)
 }
